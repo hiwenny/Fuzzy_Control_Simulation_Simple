@@ -1,0 +1,111 @@
+[System]
+Name='Control'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=49
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Distance'
+Range=[-20 20]
+NumMFs=7
+MF1='FarN':'trimf',[-31.2 -20 -8.012]
+MF2='MedN':'trimf',[-15.93 -8 -4]
+MF3='FarP':'trimf',[8.012 20 39.2]
+MF4='VerySmall':'trimf',[-2 0 2]
+MF5='MedP':'trimf',[4 8 15.93]
+MF6='SmlN':'trimf',[-8 -4 0]
+MF7='SmlP':'trimf',[0 4 8]
+
+[Input2]
+Name='AngularDistance'
+Range=[-3.14159265358979 3.14159265358979]
+NumMFs=7
+MF1='LargeNegative':'trimf',[-5.68 -3.16 -1.03902116402116]
+MF2='SmallNegative':'trimf',[-0.993245696400626 -0.25 0]
+MF3='LargePositive':'trimf',[0.989148148148148 3.14 5.66]
+MF4='MedNegative':'trimf',[-2.019 -0.9992 -0.25]
+MF5='MedPositive':'trimf',[0.25 0.9891 2]
+MF6='SmallPositive':'trimf',[0 0.25 0.993245696400626]
+MF7='VerySmall':'trimf',[-0.25 0 0.25]
+
+[Output1]
+Name='Velocity'
+Range=[-10 10]
+NumMFs=7
+MF1='MedNeg':'trimf',[-8 -5 -2]
+MF2='SlowNeg':'trimf',[-4 -2 0]
+MF3='MedPos':'trimf',[2 5 8]
+MF4='SlowPos':'trimf',[0 2 4]
+MF5='Stop':'trimf',[-1.5 0 1.5]
+MF6='FastNeg':'trimf',[-30 -10 -6]
+MF7='FastPos':'trimf',[6 10 30]
+
+[Output2]
+Name='AngularVelocity'
+Range=[-3.14159265358979 3.142]
+NumMFs=7
+MF1='WLrgNeg':'trimf',[-5.662 -3.142 -1.5]
+MF2='Stop':'trimf',[-0.25 0 0.25]
+MF3='WLrgPos':'trimf',[1.5 3.139 5.659]
+MF4='WMedNeg':'trimf',[-2 -1.25 -0.5]
+MF5='WMedPos':'trimf',[0.5 1.25 2]
+MF6='WSmlNeg':'trimf',[-1 -0.5 0]
+MF7='WSmlPos':'trimf',[-0 0.5 1]
+
+[Rules]
+1 1, 5 1 (1) : 1
+1 2, 1 6 (1) : 1
+1 3, 5 3 (1) : 1
+1 4, 2 4 (1) : 1
+1 5, 4 5 (1) : 1
+1 6, 1 7 (1) : 1
+2 1, 5 1 (1) : 1
+2 2, 2 6 (1) : 1
+2 3, 5 3 (1) : 1
+2 4, 5 4 (1) : 1
+2 5, 5 5 (1) : 1
+2 6, 2 7 (1) : 1
+2 7, 1 2 (1) : 1
+1 7, 6 2 (1) : 1
+3 1, 5 1 (1) : 1
+3 2, 3 6 (1) : 1
+3 3, 5 3 (1) : 1
+3 4, 4 4 (1) : 1
+3 5, 4 5 (1) : 1
+3 6, 3 7 (1) : 1
+3 7, 7 2 (1) : 1
+4 1, 5 1 (1) : 1
+4 2, 5 6 (1) : 1
+4 3, 5 3 (1) : 1
+4 4, 5 4 (1) : 1
+4 5, 5 5 (1) : 1
+4 6, 5 7 (1) : 1
+4 7, 5 2 (1) : 1
+5 1, 5 1 (1) : 1
+5 2, 4 6 (1) : 1
+5 3, 5 3 (1) : 1
+5 4, 5 4 (1) : 1
+5 5, 5 5 (1) : 1
+5 6, 4 7 (1) : 1
+5 7, 3 2 (1) : 1
+6 1, 5 1 (1) : 1
+6 2, 5 6 (1) : 1
+6 3, 5 3 (1) : 1
+6 4, 5 4 (1) : 1
+6 5, 5 5 (1) : 1
+6 6, 5 7 (1) : 1
+6 7, 2 2 (1) : 1
+7 1, 5 1 (1) : 1
+7 2, 5 6 (1) : 1
+7 3, 5 3 (1) : 1
+7 4, 5 4 (1) : 1
+7 5, 5 5 (1) : 1
+7 6, 5 7 (1) : 1
+7 7, 4 2 (1) : 1
