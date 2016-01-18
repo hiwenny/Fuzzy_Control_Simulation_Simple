@@ -69,8 +69,8 @@ for i=1:iterations
     % Defining the target movement
     % Can be any
     if target(1)<=20 && target(1)>=-20 && target(2) <=20 && target(2)>=-20,
-        target(1) = target(1)+3*(rand(1)-rand(1))
-        target(2) = target(2)+3*(rand(1)-rand(1))
+        target(1) = target(1)+3*(rand(1)-rand(1));
+        target(2) = target(2)+3*(rand(1)-rand(1));
     else
         % To reset back into boundary
         target = [-5 -5];
