@@ -38,7 +38,7 @@ for i=1:iterations
     % Distance is a straight line between car centroid and targe's centroid
     % Angle is the difference between current car heading and angle
     % calculated from the new distance.
-    fis = readfis('Control_new_try.fis');
+    fis = readfis('Control_new.fis');
     distance = sqrt( (target(1)-Car.center(1))^2 + (target(2)-Car.center(2))^2 );   
     angle = atan2(target(2)-Car.center(2), target(1)-Car.center(1)) - Car.heading;
     angle = mod(  angle+pi, 2*pi) - pi;
