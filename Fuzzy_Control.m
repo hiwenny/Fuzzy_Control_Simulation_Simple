@@ -35,7 +35,10 @@ iterations = 1000;
 for i=1:iterations
     
     % Control fuzzy
-    fis = readfis('Control_new.fis');
+    % Distance is a straight line between car centroid and targe's centroid
+    % Angle is the difference between current car heading and angle
+    % calculated from the new distance.
+    fis = readfis('Control_new_try.fis');
     distance = sqrt( (target(1)-Car.center(1))^2 + (target(2)-Car.center(2))^2 );   
     angle = atan2(target(2)-Car.center(2), target(1)-Car.center(1)) - Car.heading;
     angle = mod(  angle+pi, 2*pi) - pi;
@@ -69,8 +72,8 @@ for i=1:iterations
     % Defining the target movement
     % Can be any
     if target(1)<=20 && target(1)>=-20 && target(2) <=20 && target(2)>=-20,
-        target(1) = target(1)+3*(rand(1)-rand(1));
-        target(2) = target(2)+3*(rand(1)-rand(1));
+        target(1) = target(1)+2*(rand(1)-rand(1));
+        target(2) = target(2)+2*(rand(1)-rand(1));
     else
         % To reset back into boundary
         target = [-5 -5];
